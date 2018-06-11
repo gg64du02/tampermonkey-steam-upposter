@@ -1,1 +1,1 @@
-# TODO: add support for other languages: like french
+# DONE: add support for other languages: all language should be supported
