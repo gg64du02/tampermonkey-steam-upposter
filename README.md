@@ -10,7 +10,8 @@ This is suppose to send a "up" message in a specific thread set in the script.
 
 2. install the script in TM
 
-3. set the steam thread URL inside the script "stream_thread_to_up" and "hours_timer"
+3. set the steam thread URL inside the script "stream_thread_to_up", "hours_timer_for_upposting"
+ and "time_in_min_for_refresh"
 
 4. put the website as home url for Chrome (or one of the defaults url)
 
