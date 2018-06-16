@@ -14,38 +14,33 @@
 //Based on this UserScript:
 // https://gist.github.com/revooms/faacbaa3a78b5d33ceb5
 
-bla();
 
-function bla(stream_thread_to_up,hours_timer_for_upposting, time_in_min_for_refresh){
 
-    //PLEASE SET THOSE VARIABLES
-    //thread to up post
-    stream_thread_to_up = 'https://steamcommunity.com/app/302830/discussions/0/2561864094360371231/';
-    //minimum number of hours between posts
-    hours_timer_for_upposting = 2;
-    //number of minutes between page refresh
-    time_in_min_for_refresh = 31;
+//PLEASE SET THOSE VARIABLES
+//thread to up post
+window.stream_thread_to_up = 'https://steamcommunity.com/app/302830/discussions/0/2561864094360371231/';
+//minimum number of hours between posts
+window.hours_timer_for_upposting = 2;
+//number of minutes between page refresh
+window.time_in_min_for_refresh = 31;
 
 
 
-    this.$ = this.jQuery = jQuery.noConflict(true);
+this.$ = this.jQuery = jQuery.noConflict(true);
 
-    sde_AddUppost(stream_thread_to_up,hours_timer_for_upposting);
+sde_AddUppost(stream_thread_to_up,hours_timer_for_upposting);
 
-    timerReloadSetUp(time_in_min_for_refresh);
+timerReloadSetUp(time_in_min_for_refresh);
 
-    console.log('Greasemonkey Steam Discussions Enhancements loaded');
-
-}
+console.log('Greasemonkey Steam Discussions Enhancements loaded');
 
 
-
-function timerReloadSetUp(time_in_min,     time_in_ms){
+function timerReloadSetUp(time_in_min){
     console.log("timerReload:start");
     console.log("time_in_min:"+time_in_min);
     // +"00" -> *100
     //time_in_ms = time_in_min * 60 * 100000 *100;
-    time_in_ms = parseInt(time_in_min) * 100000 ;
+    var time_in_ms = parseInt(time_in_min) * 100000 ;
     console.log("time_in_ms:"+time_in_ms);
     //10 * 1000 ms
 //     window.setInterval(reload, 10000);
@@ -61,7 +56,7 @@ function reload(){
 
 
 // -------------------------------------------
-function sde_AddUppost(stream_thread_to_up,hours_timer,        right_steam_thread, a,b, last_message_timestamp, current_time, current_time_in_ms, diff, current_time_in_ms_int, hours_since_last_message,last_message_timestamp_int) {
+function sde_AddUppost(stream_thread_to_up,hours_timer) {
 
 
     //gg64du02
@@ -72,26 +67,26 @@ function sde_AddUppost(stream_thread_to_up,hours_timer,        right_steam_threa
     //console.log(window.location.href);
     console.log(window.location.href);
 
-    right_steam_thread = window.location.href
+    var right_steam_thread = window.location.href
 
     if(right_steam_thread==stream_thread_to_up){
         console.log("right thread");
 
 
-        a = document.getElementsByClassName('commentthread_comment_timestamp');
-        b = a[a.length-1];
+        var a = document.getElementsByClassName('commentthread_comment_timestamp');
+        var b = a[a.length-1];
 
 
-        last_message_timestamp = b.getAttribute('data-timestamp');
+        var last_message_timestamp = b.getAttribute('data-timestamp');
 
         last_message_timestamp = last_message_timestamp + "00000";
 
 //         console.log("last_message_timestamp:"+last_message_timestamp);
 
 
-        current_time = new Date();
+        var current_time = new Date();
 
-        current_time_in_ms = current_time.getTime();
+        var current_time_in_ms = current_time.getTime();
 
         //add two missing zero to compare them
         current_time_in_ms = current_time_in_ms + "00";
@@ -99,17 +94,17 @@ function sde_AddUppost(stream_thread_to_up,hours_timer,        right_steam_threa
 //         console.log("current_time_in_ms    :"+current_time_in_ms);
 
 
-        current_time_in_ms_int = parseInt(current_time_in_ms);
+        var current_time_in_ms_int = parseInt(current_time_in_ms);
 
-        last_message_timestamp_int = parseInt(last_message_timestamp);
+        var last_message_timestamp_int = parseInt(last_message_timestamp);
 
 
-        diff  =  current_time_in_ms_int - last_message_timestamp_int;
+        var diff  =  current_time_in_ms_int - last_message_timestamp_int;
 
 //         console.log("diff:"+diff);
 
 
-        hours_since_last_message = (diff / 3600) / 100000;
+        var hours_since_last_message = (diff / 3600) / 100000;
 
 //         console.log("hours_since_last_message:"+hours_since_last_message);
 
