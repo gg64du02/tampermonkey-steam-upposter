@@ -14,27 +14,33 @@
 //Based on this UserScript:
 // https://gist.github.com/revooms/faacbaa3a78b5d33ceb5
 
-//PLEASE SET THOSE VARIABLES
-//thread to up post
-stream_thread_to_up = 'https://steamcommunity.com/app/302830/discussions/0/2561864094360371231/';
-//minimum number of hours between posts
-hours_timer_for_upposting = 2;
-//number of minutes between page refresh
-time_in_min_for_refresh = 130;
+bla();
+
+function bla(stream_thread_to_up,hours_timer_for_upposting, time_in_min_for_refresh){
+
+    //PLEASE SET THOSE VARIABLES
+    //thread to up post
+    stream_thread_to_up = 'https://steamcommunity.com/app/302830/discussions/0/2561864094360371231/';
+    //minimum number of hours between posts
+    hours_timer_for_upposting = 2;
+    //number of minutes between page refresh
+    time_in_min_for_refresh = 31;
 
 
 
-this.$ = this.jQuery = jQuery.noConflict(true);
+    this.$ = this.jQuery = jQuery.noConflict(true);
 
-sde_AddUppost(stream_thread_to_up,hours_timer_for_upposting);
+    sde_AddUppost(stream_thread_to_up,hours_timer_for_upposting);
 
-timerReloadSetUp(time_in_min_for_refresh);
+    timerReloadSetUp(time_in_min_for_refresh);
 
-console.log('Greasemonkey Steam Discussions Enhancements loaded');
+    console.log('Greasemonkey Steam Discussions Enhancements loaded');
+
+}
 
 
 
-function timerReloadSetUp(time_in_min){
+function timerReloadSetUp(time_in_min,     time_in_ms){
     console.log("timerReload:start");
     console.log("time_in_min:"+time_in_min);
     // +"00" -> *100
@@ -55,7 +61,7 @@ function reload(){
 
 
 // -------------------------------------------
-function sde_AddUppost(stream_thread_to_up,hours_timer) {
+function sde_AddUppost(stream_thread_to_up,hours_timer,        right_steam_thread, a,b, last_message_timestamp, current_time, current_time_in_ms, diff, current_time_in_ms_int, hours_since_last_message,last_message_timestamp_int) {
 
 
     //gg64du02
@@ -116,7 +122,6 @@ function sde_AddUppost(stream_thread_to_up,hours_timer) {
             //btn_green_white_innerfade btn_small
             $('.btn_green_white_innerfade').click();
         }
-
 
     }
 
