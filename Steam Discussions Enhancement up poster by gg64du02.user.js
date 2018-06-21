@@ -60,9 +60,6 @@ function sde_AddUppost(stream_thread_to_up,hours_timer) {
 
 
     //gg64du02
-    //putting the up message in the textarea
-    //class: forumtopic_reply_entry
-    $('.forumtopic_reply_entry .gray_bevel .forumtopic_reply_textarea').val('up');
 
     //console.log(window.location.href);
     console.log(window.location.href);
@@ -111,6 +108,10 @@ function sde_AddUppost(stream_thread_to_up,hours_timer) {
 
 
         if(hours_since_last_message>hours_timer){
+
+            //putting the up message in the textarea
+            //class: forumtopic_reply_entry
+            $('.forumtopic_reply_entry .gray_bevel .forumtopic_reply_textarea').val('up');
             console.log("timer triggered");
 
             //posting the up message
