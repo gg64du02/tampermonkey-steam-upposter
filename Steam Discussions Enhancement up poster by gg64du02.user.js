@@ -105,9 +105,16 @@ function sde_AddUppost(stream_thread_to_up,hours_timer) {
 
 //         console.log("hours_since_last_message:"+hours_since_last_message);
 
-
-
         if(hours_since_last_message>hours_timer){
+
+            //clicking on the bin button on the last message posted by myself
+            e = document.getElementsByClassName('forum_comment_action');
+            f = e[e.length-3]
+            f.click()
+
+            //confirming the deletion of the message
+            g = document.getElementsByClassName('btn_green_white_innerfade btn_medium')
+            g[g.length-1].click()
 
             //putting the up message in the textarea
             //class: forumtopic_reply_entry
