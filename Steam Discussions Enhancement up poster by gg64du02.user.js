@@ -18,7 +18,7 @@
 
 //PLEASE SET THOSE VARIABLES
 //thread to up post
-window.stream_thread_to_up = 'https://steamcommunity.com/app/302830/discussions/0/2561864094360371231/';
+window.stream_thread_to_up = 'https://steamcommunity.com/app/302830/discussions/0/1741103267301554430/';
 //minimum number of hours between posts
 window.hours_timer_for_upposting = 2;
 //number of minutes between page refresh
@@ -129,4 +129,3 @@ function sde_AddUppost(stream_thread_to_up,hours_timer) {
     }
 
 }
-
