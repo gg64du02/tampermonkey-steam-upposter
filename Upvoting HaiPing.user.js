@@ -2,7 +2,7 @@
 // @name        Upvoting HaiPing
 // @namespace   sdark
 // @description Upvoting HaiPing
-// @include   http*://arkservers.net/vote/172.107.170.199:27016/
+// @include   http*://arkservers.net/vote/172.107.170.199:27016*
 
 // @version   0.1
 // @grant     none
@@ -24,7 +24,7 @@ upvote_button[0].click();
 
 console.log('1st button;');
 
-document.getElementsByClassName('btn btn-success')[0].click()
+document.getElementsByClassName('btn btn-success')[0].click();
 
 console.log('2nd button;');
 
